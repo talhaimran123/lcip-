@@ -1,0 +1,112 @@
+@mixin flex($jc: center, $ai: center) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+}
+
+@mixin h1() {
+  font-weight: 800;
+  font-size: 3.2rem;
+  font-family: "Lato", sans-serif;
+}
+
+
+@mixin h2() {
+  font-weight: 900;
+  font-size: 2.8rem;
+  font-family: "Lato", sans-serif;
+}
+
+@mixin h3() {
+  font-weight: 900;
+  font-size: 2.4rem;
+  font-family: "Lato", sans-serif;
+}
+
+@mixin h4() {
+  font-weight: 800;
+  font-size: 2rem;
+  font-family: "Lato", sans-serif;
+}
+
+@mixin h5() {
+  font-weight: 700;
+  font-size: 1.8rem; 
+  font-family: "Lato", sans-serif;
+}
+
+//! H6, H7, H8
+@mixin h6($fw: 700) {
+  font-weight: $fw; //h7:400 //h8:400
+  font-size: 1.6rem; 
+  font-family: "Lato", sans-serif;
+}
+
+// Paragraphs
+
+//! P1, P2
+@mixin p1($fw: 400) {
+  font-weight: $fw; //p2: 300
+  font-size: 1.6rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+//! P3, P4, P5
+@mixin p2($fw: 400) {
+  font-weight: $fw; //p3 & p4: 400 //p5: 300 //
+  font-size: 1.4rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+//! P6, P7 --> (don't forget to add font styles)
+@mixin p3($fw: 300) {
+  font-weight: $fw; //p6 & p7: 300
+  font-size: 1.2rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+// button text
+@mixin btUnctive(){
+  font-weight: 300;
+  font-size: 1.4rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+@mixin btActive(){
+  font-weight: 600;
+  font-size: 1.4rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+
+@mixin button($bgc: #f46150, $hbgc: #fff, $w: 160px, $c: #fff, $hc: #000) {
+  @include flex;
+  border: none;
+  transition: all 0.3s;
+  padding: 5px;
+  background-color: $bgc;
+  border-radius: 50px;
+  a,
+  span {
+    padding: 8px 0;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: $w;
+    border: 2px dashed var(--primary-text);
+    border-radius: 50px;
+    @include para($fw: 500);
+    color: $c;
+    text-transform: capitalize;
+  }
+
+  &:hover {
+    a,
+    span {
+      background-color: transparent;
+      background-color: $hbgc;
+      color: $hc;
+      transform: translateX(20px);
+    }
+  }
+}

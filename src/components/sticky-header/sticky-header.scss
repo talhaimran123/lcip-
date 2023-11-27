@@ -1,0 +1,46 @@
+@import "../../mixins.scss";
+
+.sticky-header {
+  @include flex($jc: space-between);
+  padding: 15px 5%;
+  background: var(--primary-color);
+  // background: url(../../assets/images/hero-bg.svg) center,
+  //     linear-gradient(
+  //       to right,
+  //       var(--primary-color),
+  //       var(--secondary-color-one)
+  //     );
+  margin: 0;
+  position: sticky;
+  top: 0px;
+  z-index: 999;
+  p {
+    @include h5;
+    color: var(--secondary-color-two);
+    span {
+      a {
+        @include h4;
+        color: var(--secondary-color-two);
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  & > a {
+    background: var(--secondary-color-two);
+    padding: 12px 64px;
+    border: none;
+    border-radius: 12px 0 12px 0;
+    color: var(--primary-color);
+    @include btActive;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.14);
+    transition: var(--basic);
+    &:hover {
+      border-radius: 0 12px 0 12px;
+      text-decoration: underline;
+    }
+  }
+}

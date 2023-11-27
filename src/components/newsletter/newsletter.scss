@@ -1,0 +1,26 @@
+@import "../../mixins.scss";
+
+.newsletter {
+  background: url(../../assets/images/blue-dotted-bg.svg) center,
+    var(--secondary-color-three);
+
+  .newsletter-box {
+    background: var(--primary-color);
+    width: 100%;
+    border: none;
+    border-radius: 24px;
+    padding: 80px 10px;
+    margin: auto;
+    .head {
+      .sect-heading,
+      .sect-desc {
+        color: var(--secondary-color-two);
+      }
+    }
+
+    .form{
+        width: 60%;
+        margin: 25px auto 0 auto;
+    }
+  }
+}

@@ -1,0 +1,60 @@
+@import "../../mixins.scss";
+
+.comparison-slider {
+  margin-top: 30px;
+  overflow: hidden;
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    max-width: 821px;
+    overflow: hidden;
+    border-radius: 24px;
+  }
+
+  .swiper-pagination {
+    top: unset;
+    bottom: 25px !important;
+    .swiper-pagination-bullet {
+      cursor: pointer;
+      width: 12px;
+      height: 12px;
+      background: #f5f5f5;
+      opacity: 1;
+    }
+    .swiper-pagination-bullet-active {
+      width: 12px;
+      height: 12px;
+      background: var(--primary-color);
+    }
+  }
+
+  .swiper-button-prev{
+    height: 46px !important;
+    width: 46px !important;
+    padding-right: 3px;
+    border-radius: 100%;
+    background: var(--primary-color);
+    @include flex;
+    left: 11% !important;
+    &:after {
+      font-size: 18px;
+      color: var(--secondary-color-two);
+      margin: auto;
+    }
+  }
+  .swiper-button-next {
+    height: 46px !important;
+    width: 46px !important;
+    padding-left: 3px;
+    border-radius: 100%;
+    background: var(--primary-color);
+    @include flex;
+    right: 11% !important;
+    &:after {
+      font-size: 18px;
+      color: var(--secondary-color-two);
+      margin: auto;
+    }
+  }
+}

@@ -1,0 +1,87 @@
+@import "../../mixins.scss";
+
+.info-card {
+  min-width: 292px;
+  max-width: 292px;
+  min-height: 243px;
+  background-color: var(--secondary-color-two);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.14);
+  border-radius: 24px;
+  @include flex($jc: flex-start, $ai: flex-start);
+  flex-direction: column;
+  position: relative;
+  padding: 20px 25px;
+  margin: 10px 15px 10px 0;
+  &:last-child {
+    margin: 10px 0;
+  }
+  .head {
+    @include flex;
+    .head-icon-box {
+      @include flex;
+      background: var(--primary-color);
+      padding: 5px;
+      border-radius: 100%;
+      border: none;
+      height: 32px;
+      width: 32px;
+
+      .head-icon {
+        color: var(--secondary-color-two);
+        font-size: 25px;
+      }
+    }
+    h3 {
+      text-transform: capitalize;
+      margin-left: 12px;
+      @include h5;
+    }
+  }
+  & > p {
+    @include p2($fw: 300);
+    color: #5b5b5b;
+    margin-top: 13px;
+    line-height: 19px;
+  }
+  a {
+    @include flex();
+    text-transform: capitalize;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 204px;
+    height: 48px;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 24px 0 24px 0;
+    cursor: pointer;
+    transition: var(--basic);
+    overflow: hidden;
+    p {
+      @include btActive;
+      color: var(--secondary-color-two);
+      transition: var(--basic);
+    }
+    .arrow-icon-box {
+      @include flex;
+      transition: var(--basic);
+      background-color: var(--secondary-color-two);
+      border-radius: 100%;
+      border: none;
+      padding: 5px;
+      margin-left: 75px;
+      margin-right: -100px;
+      .upright-arrow-icon {
+        color: var(--primary-color);
+        font-size: 20px;
+      }
+    }
+
+    &:hover {
+      .arrow-icon-box {
+        margin-right: 0;
+        margin-left: 12px;
+      }
+    }
+  }
+}

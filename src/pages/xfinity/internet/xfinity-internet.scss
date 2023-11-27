@@ -1,0 +1,76 @@
+@import "../../../mixins.scss";
+
+.xfinity-internet {
+  position: relative;
+
+  .best-internet-service-offers {
+    background: var(--secondary-color-three);
+  }
+
+  .xfinity-internet-cost {
+    .package-table {
+      margin-top: 20px;
+      table {
+        tbody {
+          background: var(--secondary-color-three);
+        }
+      }
+    }
+
+    & > p {
+      @include p3($fw: 400);
+      font-style: italic;
+      color: var(--secondary-color-one);
+      text-align: center;
+      margin-top: 12px;
+    }
+  }
+
+  .xfinity-internet-plans {
+    .accordion {
+      .item {
+        background: var(--secondary-color-three);
+        .custom-table {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
+  .divider {
+    @include flex($jc: space-between);
+    background: var(--primary-color);
+    padding: 30px 5%;
+    h4 {
+      flex: 1;
+      @include h4;
+      color: var(--secondary-color-two);
+    }
+    p {
+      flex: 1;
+      text-align: right;
+      @include p2;
+      color: var(--secondary-color-two);
+      span {
+        a {
+          @include p2($fw: 500);
+          text-decoration: underline;
+          &:hover {
+            color: var(--secondary-color-one);
+          }
+        }
+      }
+    }
+  }
+
+  .xfinity-internet-equipments{
+    .sideimg-card{
+        background: var(--secondary-color-three);
+    }
+  }
+
+  .xfinity-internet-faq {
+    background: var(--secondary-color-three);
+    
+  }
+}

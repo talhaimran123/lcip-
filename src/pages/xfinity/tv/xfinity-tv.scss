@@ -1,0 +1,63 @@
+@import "../../../mixins.scss";
+
+.xfinity-tv {
+  position: relative;
+
+  .best-tv-service-offers {
+    background: var(--secondary-color-three);
+
+    .accordion {
+      .item {
+        .custom-table {
+          margin-top: 0;
+          table {
+            tbody {
+              background: var(--secondary-color-three);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .xfinity-bundles {
+    .watch-card {
+      background: var(--secondary-color-three);
+      .watch-card-content {
+        .title {
+          @include h2;
+        }
+      }
+    }
+  }
+
+  .more-channels {
+    .more-channels-table {
+      table {
+        tbody {
+          background: var(--secondary-color-three);
+        }
+      }
+    }
+  }
+
+  .xfinity-tv-equipments {
+    background: var(--secondary-color-three);
+  }
+
+  .xfinity-tv-faq {
+    .faq-wrapper {
+      margin-top: 20px;
+      .accordion {
+        .item {
+          background: var(--secondary-color-three);
+        }
+      }
+    }
+  }
+
+  .tv-endnote{
+    padding: 80px 5%;
+    background: var(--secondary-color-three);  
+  }
+}

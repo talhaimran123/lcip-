@@ -1,0 +1,73 @@
+@import "../../mixins.scss";
+
+.inner-pages-hero {
+  // height: 587px;
+  height: 550px;
+  width: 100%;
+  position: relative;
+  padding: 0 5%;
+  overflow: hidden;
+  .bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .inner-pages-hero-content {
+    position: absolute;
+    top: 50%;
+    transform: translate(0%, -43%);
+    width: 100%;
+    max-width: 632px;
+    .heading {
+      @include h2;
+      color: var(--secondary-color-two);
+    }
+    .desc {
+      @include p1;
+      color: var(--secondary-color-two);
+      margin-top: 12px;
+      line-height: 26px;
+    }
+
+    .points {
+      margin: 30px auto 40px auto;
+      li {
+        @include flex($jc: flex-start);
+        margin: 12px auto;
+        .tick-icon {
+          color: var(--secondary-color-two);
+          width: 16px;
+          height: auto;
+        }
+        p {
+          @include p1;
+          color: var(--secondary-color-two);
+          margin-left: 8px;
+        }
+      }
+    }
+
+    & > a {
+      background: var(--primary-color);
+      padding: 12px 64px;
+      border: none;
+      border-radius: 12px 0 12px 0;
+      color: var(--secondary-color-two);
+      @include btActive;
+      box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.14);
+      transition: var(--basic);
+      &:hover {
+        border-radius: 0 12px 0 12px;
+        text-decoration: underline;
+        background: var(--hover-color);
+      }
+    }
+
+      .price {
+        @include p1;
+        color: var(--secondary-color-two);
+        margin-top: 20px;
+      }
+  }
+}

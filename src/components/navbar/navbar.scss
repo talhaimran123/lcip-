@@ -1,0 +1,104 @@
+@import "../../mixins.scss";
+
+.navbar {
+  @include flex($jc: space-between);
+  padding: 0 5%;
+  height: 66px;
+  z-index: 999;
+
+  .nav-links {
+    @include flex($ai: stretch);
+    height: 66px;
+    margin-top: 8px;
+    & > li,
+    .item {
+      margin: 0 0 0 17px;
+      position: relative;
+      @include flex;
+      a {
+        font-family: "Lato", sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+      }
+
+      .dropdown-icon {
+        font-size: 14px;
+        margin: 4px 0 0 3px;
+        cursor: pointer;
+        transition: var(--basic);
+        color: var(--secondary-color-one);
+      }
+
+      .dropdown-menu {
+        position: absolute;
+        top: 66px;
+        padding: 12px 8px;
+        background: var(--secondary-color-two);
+        width: 250px;
+        border-radius: 6px 6px 6px 6px;
+        @include flex($ai: flex-start);
+        flex-direction: column;
+        z-index: 999;
+
+        li {
+          width: 100%;
+          transition: var(--basic);
+          border: none;
+          border-radius: 6px;
+          a {
+            @include flex($jc: space-between);
+            padding: 12px 10px;
+            font-family: "Lato", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            width: 100%;
+            color: #888888;
+            .icon-box {
+              opacity: 0;
+              @include flex;
+              padding: 5px;
+              height: 24px;
+              width: 24px;
+              border-radius: 100%;
+              background-color: var(--primary-color);
+              transition: var(--basic);
+              .upright-arrow-icon {
+                color: var(--secondary-color-two);
+                font-size: 19px;
+              }
+            }
+          }
+
+          &:last-child {
+            a {
+              color: var(--primary-color);
+              text-decoration: underline;
+            }
+          }
+          &:hover {
+            background-color: #006eff10;
+            .icon-box {
+              opacity: 1;
+            }
+          }
+        }
+      }
+
+      &:hover {
+        .dropdown-icon {
+          transform: rotate(180deg);
+        }
+      }
+
+      &:last-child {
+        .dropdown-menu {
+          margin-right: 30px;
+        }
+      }
+    }
+  }
+
+  @media(max-width: 910px){
+    display: none;
+  }
+}

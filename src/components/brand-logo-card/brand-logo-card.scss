@@ -1,0 +1,71 @@
+@import "../../mixins.scss";
+
+.brand-logo-card {
+  position: relative;
+  height: clamp(148px, 148px, 148px);
+  width: clamp(187px, 187px, 187px);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.14),
+    0px 2px 4px 0px rgba(0, 0, 0, 0.14);
+  border: none;
+  border-radius: 24px;
+  z-index: 1;
+  background-color: var(--secondary-color-two);
+  @include flex;
+  margin: 20px 7px;
+  transition: var(--basic);
+
+  img {
+    width: 70%;
+  }
+
+  .link-name{
+    color: var(--primary-color);
+    text-decoration: underline;
+    @include p2($fw: 400);
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+
+    &:hover{
+      color: var(--hover-color);
+    }
+  }
+
+  .white-color-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: clamp(148px, 148px, 148px);
+    width: clamp(187px, 187px, 187px);
+    background: var(--secondary-color-two);
+    border: none;
+    border-radius: 24px;
+    z-index: -1;
+    transition: var(--basic);
+  }
+
+  .blue-color-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: clamp(148px, 148px, 148px);
+    width: clamp(187px, 187px, 187px);
+    background: var(--primary-color);
+    border: none;
+    border-radius: 24px;
+    z-index: -2;
+    cursor: pointer;
+    transition: var(--basic);
+    visibility: hidden;
+  }
+
+  &:hover {
+    .blue-color-overlay {
+      visibility: visible;
+      transform: rotate(15deg);
+    }
+  }
+}

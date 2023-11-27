@@ -1,0 +1,118 @@
+@import "../../mixins.scss";
+
+.blog-card {
+  background-color: var(--secondary-color-two);
+  min-width: 397.33px;
+  max-width: 397.33px;
+  // max-width: 608px;
+  min-height: 360px;
+  max-height: 360px;
+  border: none;
+  border-radius: 24px;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.14);
+  overflow: hidden;
+  position: relative;
+  margin: 10px 11px 10px 0;
+
+  &:last-child {
+    margin: 10px 0;
+  }
+
+  .thumbnail {
+    position: relative;
+    a {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      border: none;
+      border-radius: 24px;
+      transition: var(--basic);
+      width: 27px;
+      overflow: hidden;
+
+      .icon-box {
+        @include flex;
+        height: 27px;
+        width: 27px;
+        border-radius: 100%;
+        border: none;
+        background-color: var(--secondary-color-two);
+        .upright-arrow-icon {
+          color: var(--primary-color);
+          font-size: 22px;
+        }
+      }
+
+      &:after {
+        content: "Read More";
+        position: absolute;
+        top: 10px;
+        left: 45px;
+        @include btActive;
+        color: var(--secondary-color-two);
+        visibility: hidden;
+        transition: var(--basic);
+        white-space: nowrap;
+      }
+    }
+  }
+
+  .blog-details {
+    padding: 10px 15px 0 15px;
+    .blog-card-title {
+      @include h6;
+      color: var(--secondary-color-one);
+      transition: var(--basic);
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    .blog-card-desc {
+      @include p2($fw: 300);
+      color: #5b5b5b;
+      margin-top: 9px;
+    }
+  }
+
+  .meta-data {
+    padding: 0 15px 15px 15px;
+    @include flex($jc: space-between);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    .writer-info {
+      @include flex($jc: flex-start);
+      .writer-pic {
+        width: 28px;
+        height: 28px;
+        border-radius: 100%;
+      }
+      p {
+        margin-left: 8px;
+        @include h6;
+        font-size: 1.4rem;
+        color: var(--secondary-color-one);
+      }
+    }
+
+    .date {
+      @include p2($fw: 300);
+      color: #5b5b5b;
+    }
+  }
+
+  &:hover {
+    .thumbnail {
+      a {
+        background-color: var(--primary-color);
+        padding: 6px;
+        width: 140px;
+        &:after {
+          visibility: visible;
+        }
+      }
+    }
+  }
+}

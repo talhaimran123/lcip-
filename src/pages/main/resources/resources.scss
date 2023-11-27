@@ -1,0 +1,98 @@
+@import "../../../mixins.scss";
+
+.resources {
+  .resources-slider {
+    background: #000;
+    .swiper-slide {
+      position: relative;
+      height: 100%;
+      .resources-slide-content {
+        background: #ffffff80;
+        padding: 20px 5% 60px 5%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        @include flex($jc: flex-start, $ai: flex-start);
+        flex-direction: column;
+        .heading {
+          @include h5;
+          color: var(--secondary-color-one);
+        }
+        .metadata {
+          @include flex($jc: flex-start);
+          margin-top: 5px;
+
+          & > p {
+            @include p1($fw: 400);
+            font-size: 1.4rem;
+            color: var(--secondary-color-one);
+            &::after {
+              content: " |";
+            }
+          }
+
+          .categories {
+            @include flex($jc: flex-start);
+            p {
+              @include p1($fw: 400);
+              font-size: 1.4rem;
+              color: var(--secondary-color-one);
+              &::after {
+                content: " ,";
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .swiper-pagination {
+        top: unset;
+        bottom: 20px !important;
+        text-align: right;
+        padding-right: 5%;
+        .swiper-pagination-bullet {
+          cursor: pointer;
+          width: 12px;
+          height: 12px;
+          background: #f5f5f5;
+          opacity: 1;
+        }
+        .swiper-pagination-bullet-active {
+          width: 12px;
+          height: 12px;
+          background: var(--primary-color);
+        }
+      }
+    
+      .swiper-button-prev{
+        height: 46px !important;
+        width: 46px !important;
+        padding-right: 3px;
+        border-radius: 100%;
+        background: var(--primary-color);
+        @include flex;
+        left: 5% !important;
+        &:after {
+          font-size: 18px;
+          color: var(--secondary-color-two);
+          margin: auto;
+        }
+      }
+      .swiper-button-next {
+        height: 46px !important;
+        width: 46px !important;
+        padding-left: 3px;
+        border-radius: 100%;
+        background: var(--primary-color);
+        @include flex;
+        right: 5% !important;
+        &:after {
+          font-size: 18px;
+          color: var(--secondary-color-two);
+          margin: auto;
+        }
+      }
+  }
+}

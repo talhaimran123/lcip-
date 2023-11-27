@@ -1,0 +1,60 @@
+@import "../../mixins.scss";
+
+.searchbar {
+  @include flex($jc: space-between);
+  width: 100%;
+  padding: 15px 30px;
+  border-radius: 10px;
+  box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.14);
+  background-color: var(--secondary-color-two);
+  .input-box {
+    @include flex($jc: flex-start);
+    height: 35px;
+    .house-icon {
+      font-size: 22px;
+      color: #888888;
+      margin-right: 7px;
+    }
+    input {
+      border: none;
+      background: transparent;
+      @include p1;
+      color: #888888;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  select{
+    border: none;
+      background: transparent;
+      @include p1;
+      color: #888888;
+      &:focus {
+        outline: none;
+      }
+  }
+
+  button {
+    background-color: var(--primary-color);
+    border-radius: 100%;
+    border: none;
+    padding: 6px;
+    @include flex;
+    cursor: pointer;
+    transition: var(--basic);
+    .upright-arrow-icon {
+      color: var(--secondary-color-two);
+      font-size: 30px;
+      transition: var(--basic);
+    }
+
+    &:hover{
+        // background-color: var(--secondary-color-one);
+        .upright-arrow-icon{
+            transform: scale(0.9);
+        }
+    }
+  }
+}

@@ -1,0 +1,65 @@
+@import "../../mixins.scss";
+
+.sidebar-item {
+    position: relative;
+  .sidebar-item-title {
+    @include flex($jc: space-between);
+
+    a {
+      padding: 15px 0;
+      font-size: 14px;
+      font-family: "Lato", sans-serif;
+      color: var(--secondary-color-one);
+    }
+    .drop-icon {
+      color: var(--secondary-color-one);
+      font-size: 14px;
+    }
+    .active {
+      color: var(--primary-color);
+    }
+    .active > .drop-icon {
+      color: var(--primary-color);
+    }
+  }
+  .sidebar-item-content {
+    padding-left: 10px;
+    height: 0;
+    overflow: hidden;
+    transition: var(--basic);
+    li {
+      padding: 10px 0;
+      a {
+        font-size: 14px;
+        font-family: "Lato", sans-serif;
+        color: #888888;
+      }
+    }
+  }
+
+  &:after{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 260px;
+    height: 1px;
+    content: '';
+    background: #E8E8E8;
+  }
+}
+
+.open {
+  .sidebar-item-title {
+    .drop-icon {
+      color: var(--secondary-color-one);
+      font-size: 14px;
+      transform: rotate(180deg);
+    }
+  }
+  .sidebar-item-content {
+    height: auto;
+    transition: var(--basic);
+  }
+}

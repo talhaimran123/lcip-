@@ -1,0 +1,26 @@
+@import "../../mixins.scss";
+
+.cta{
+    background: var(--primary-color);
+    @include flex($jc: space-between);
+    padding: 35px 5%;
+    .cta-left{
+        flex: 1;
+        .cta-heading{
+            @include h3;
+            color: var(--secondary-color-two);
+            text-transform: capitalize;
+        }
+        .cta-desc{
+            @include p1($fw:300);
+            color: var(--secondary-color-two);
+            margin-top: 12px;
+        }
+    }
+
+    .cta-right{
+        flex: 1;
+        padding-left: 20px;
+        @include flex($jc: flex-end);
+    }
+}

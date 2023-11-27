@@ -1,0 +1,53 @@
+@import "../../mixins.scss";
+
+.watch-card {
+  @include flex($ai: flex-start);
+  background: var(--secondary-color-two);
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 15px auto;
+  .watch-card-content {
+    flex-direction: column;
+    padding: 20px 20px;
+    .title {
+      @include h4;
+      color: var(--secondary-color-one);
+      span {
+        a {
+          @include h4;
+          color: var(--primary-color);
+          text-decoration: underline;
+        }
+        &:after {
+          content: ", ";
+          color: var(--secondary-color-one);
+          @include h4;
+        }
+        &:hover {
+          a {
+            color: red;
+          }
+        }
+      }
+    }
+    .desc {
+      @include p1($fw: 400);
+      color: #5b5b5b;
+      line-height: 28px;
+      margin-top: 7px;
+
+      span {
+        a {
+          @include p1($fw: 500);
+          line-height: 28px;
+          color: var(--primary-color);
+          &:hover {
+            color: var(--hover-color);
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}

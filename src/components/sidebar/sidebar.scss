@@ -1,0 +1,32 @@
+@import "../../mixins.scss";
+
+
+.sidebar {
+  width: 280px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: var(--secondary-color-two);
+  z-index: 999;
+  padding: 40px 10px 40px 10px;
+  transition: var(--basic);
+    
+  .header {
+    @include flex($jc: flex-start, $ai: flex-end);
+    margin-bottom: 20px;
+
+    .icon {
+      color: var(--secondary-color-one);
+      font-size: 26px;
+      margin: 0 4px -5px 0;
+    }
+
+    .logo {
+      img {
+        width: 230px;
+        height: auto;
+      }
+    }
+  }
+}

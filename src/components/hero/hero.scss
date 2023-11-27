@@ -1,0 +1,32 @@
+@import "../../mixins.scss";
+
+.hero {
+  height: 495px;
+  width: 100%;
+  background: url(../../assets/images/hero-bg.svg) center,
+    linear-gradient(to right, var(--primary-color), var(--secondary-color-one));
+  background-size: cover;
+  @include flex($jc: space-between);
+  .hero-content {
+    height: 100%;
+    @include flex($jc: center, $ai: flex-start);
+    flex-direction: column;
+    padding: 0 10px 0 5%;
+    h1{
+        @include h1();
+        color: var(--secondary-color-two);
+    }
+    P{
+        @include p1();
+        color: var(--secondary-color-two);
+        margin: 25px 0;
+    }
+    .form{
+        width: 90%;
+    }
+  }
+  .hero-sideimg {
+    height: 100%;
+    @include flex($jc: end, $ai: end)
+  }
+}

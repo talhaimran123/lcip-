@@ -1,0 +1,48 @@
+@import "../../../mixins.scss";
+
+.xfinity-deals {
+  position: relative;
+
+  .top-xfinity-deals {
+    .cards {
+      .package-card {
+        background: var(--secondary-color-three);
+      }
+    }
+  }
+
+  .important-links {
+    background: var(--secondary-color-three);
+    .all-links {
+      @include flex;
+      flex-wrap: wrap;
+      margin-top: 20px;
+      a {
+        padding: 12px;
+        margin: 12px;
+        @include p2($fw: 400);
+        text-decoration: underline;
+        color: var(--primary-color);
+        border: none;
+        border-radius: 24px;
+        background: var(--secondary-color-two);
+        transition: var(--basic);
+        text-align: center;
+        box-shadow: var(--primary-shadow);
+        &:hover {
+          color: var(--secondary-color-two);
+          background: var(--primary-color);
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .xfinity-deals{
+    background: var(--secondary-color-three);
+
+    .endnote{
+      margin-top: 30px;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+@import "../../mixins.scss";
+
+.accordion {
+  .item {
+    background: #15d0dd88;
+    padding: 10px 15px;
+    border: 1px solid white;
+    overflow: hidden;
+    .title {
+      cursor: pointer;
+      @include h5;
+      // margin-bottom: 5px;
+      span {
+        @include h5;
+      }
+    }
+    .content {
+      height: auto;
+      max-height: 0px;
+      @include p2;
+      overflow: hidden;
+      transition: all 0.5s ease;
+    }
+    .show {
+      max-height: 200px;
+      transition: all 0.5s ease;
+    }
+  }
+}

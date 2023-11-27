@@ -1,0 +1,103 @@
+@import "../../../mixins.scss";
+
+.home {
+  .logos-strip {
+    @include flex($jc: space-between);
+    padding: 35px 5%;
+    .logos-strip-images {
+      flex: 1;
+    }
+  }
+
+  .info-cards-section {
+    background: var(--secondary-color-three);
+  }
+
+  .best-internet-tv-offer {
+    background: var(--secondary-color-three);
+  }
+
+  .we-research {
+    & > a {
+      @include btActive;
+      color: var(--primary-color);
+      transition: var(--basic);
+      @include flex($jc: flex-end);
+      text-transform: capitalize;
+      width: 100%;
+      margin-top: 10px;
+      .right-arrow-icon {
+        font-size: 14px;
+        margin-left: 6px;
+        margin-top: 4px;
+      }
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .editors-choice {
+    background: url(../../../assets/images/hero-bg.svg) center, #161616;
+
+    .head {
+      .sect-heading,
+      .sect-desc {
+        color: var(--secondary-color-two) !important;
+      }
+    }
+
+    & > a {
+      @include btActive;
+      color: var(--secondary-color-two);
+      transition: var(--basic);
+      @include flex($jc: flex-end);
+      text-transform: capitalize;
+      width: 100%;
+      margin-top: 10px;
+      .right-arrow-icon {
+        font-size: 14px;
+        margin-left: 6px;
+        margin-top: 4px;
+      }
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .quick-answers {
+    background: var(--secondary-color-three);
+
+    .cards {
+      margin-top: 20px;
+      @include flex();
+      flex-wrap: wrap;
+      .blog-card {
+        max-width: 600px;
+        min-height: 410px;
+        max-height: 410px;
+      }
+    }
+  }
+
+  .start-watching {
+    & > a {
+      @include btActive;
+      color: var(--primary-color);
+      transition: var(--basic);
+      @include flex($jc: flex-end);
+      text-transform: capitalize;
+      width: 100%;
+      margin-top: 10px;
+      .right-arrow-icon {
+        font-size: 14px;
+        margin-left: 6px;
+        margin-top: 4px;
+      }
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
